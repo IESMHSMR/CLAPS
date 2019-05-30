@@ -1,42 +1,44 @@
-# Azure Function Uri (containing "azurewebsites.net") for storing Local Administrator secret in Azure Key Vault
+# Azure Function Uri
 $uri = ''
 
+## Administrator del equipo con sid500.
 $sid500 = Get-LocalUser | Where-Object { $_.SID -like "S-1-5-*-500" }
+
+## Si la cuenta con sid500 no está habilitada, intenta habilitarla.
+if($sid500.Enabled -eq $false)
+{
+    try {
+        Enable-LocalUser -SID $sid500.SID
+    }
+    catch {}
+}
+
+## Genera las credenciales. (15,4) Caráctares en total y 4 de ellos no alfanumericos.
 [Reflection.Assembly]::LoadWithPartialName("System.Web")
-$clear_pwd = ([system.web.security.membership]::GeneratePassword(15,4)) -replace '[?/#]+',''
+$clear_pwd = ([system.web.security.membership]::GeneratePassword(15,4))
 
-$Date= Get-Date -Format yyyy-MM-dd
+## ID de dispositivo.
+$DeviceId = ((dsregcmd.exe /status | Where-Object {$_ -like '*DeviceId*'}) -split ' : ')[1]
 
-## Debug
-"$Date : $clear_pwd" | Out-File -FilePath C:\Temp\pwd.txt -Append
-
-$encrypt = $clear_pwd | Protect-CmsMessage -To cn=claps
-
-## Debug
-$encrypt| Out-File -FilePath C:\Temp\secret.txt -Append
-
+## Datos enviados a la función.
 $body = @"
     {
-    "keyName": "$env:COMPUTERNAME",
-    "contentType": "Local Administrator Credentials",
-    "tags": {
-            "Username": "$env:USERNAME"
-            },
-    "value": "$encrypt"
-    } 
+    "DeviceName": "$env:COMPUTERNAME",
+    "DeviceId": "$DeviceId",
+    "UserName": "$env:USERNAME",
+    "Password": "$clear_pwd"
+    }
 "@
 
-
-# Use TLS 1.2 connection
+## Use TLS 1.2 connection
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 
 try {
-    Invoke-RestMethod -Uri $uri -Method POST -Body $body -ErrorAction Stop
+    $Response = Invoke-RestMethod -Uri $uri -Method POST -Body $body -ErrorAction Stop
 }
-catch {
-    Write-Error "Failed to submit Local Administrator configuration. StatusCode: $($_.Exception.Response.StatusCode.value__). StatusDescription: $($_.Exception.Response.StatusDescription)"
+catch {}
+
+if ($Response -eq 'Se han actualizado las credenciales.') {
+    $pwd = ConvertTo-SecureString -AsPlainText -String $clear_pwd -Force
+    Set-LocalUser -SID $sid500.SID -Password $pwd -ErrorAction Stop
 }
-
-$pwd = ConvertTo-SecureString -AsPlainText -String $clear_pwd -Force
-
-Set-LocalUser -SID $sid500.SID -Password $pwd -ErrorAction Stop
