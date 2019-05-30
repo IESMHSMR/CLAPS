@@ -1,15 +1,20 @@
-## CLAPS v0.1 (Cloud Local Administrator Password Solution)
+## CLAPS v0.2 (Cloud Local Administrator Password Solution)
 
-- No trabaja con el sid500.
-- Interacción con el usuario para autenticarse contra la API Graph y conectarse a Azure.
-- Cifra las credenciales del administrador local con un certificado.
-- Actualiza la extensión del dispositivo con las nuevas credenciales cifradas.
-- A modo de depuración exporta las credenciales en claro a un fichero.
+### agent.ps1
+
+- Trabaja con el sid500.
+- Cifra las credenciales con un certificado.
+- Manda las credenciales cifradas a una función de Azure Function.
+- Actualiza las credenciales del sid500.
+- A modo de depuración exporta las credenciales en claro a pwd.txt y las credenciales cifradas a secret.txt.
 
 
-- https://github.com/Velaa98/msgraph-training-authentication/tree/master/Demos/01-rest-via-powershell#create-the-powershell-script
-- https://github.com/microsoftgraph/msgraph-training-authentication/blob/master/Demos/01-rest-via-powershell/readme.md
-- https://docs.microsoft.com/en-us/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0#permissions
-- https://docs.microsoft.com/en-us/graph/api/device-get?view=graph-rest-1.0&tabs=cs
-- https://stackoverflow.com/a/56218052/11497286
-- https://developer.microsoft.com/es-es/graph/graph-explorer#
+### function.ps1
+
+- Recibe las credenciales cifradas.
+- Usa la versión 1 de PowerShell en Azure Functions (SLAPS).
+- Se autentica contra Azure Key Vault para obtener el token de acceso y poder trabajar con el servicio.
+- Guarda en un vault de Azure Key Vault las credenciales cifradas como un secreto.
+
+
+https://srdn.io/2018/09/serverless-laps-powered-by-microsoft-intune-azure-functions-and-azure-key-vault/
