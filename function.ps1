@@ -1,27 +1,40 @@
-# POST method: $req
-$requestBody = Get-Content $req -Raw | ConvertFrom-Json
+using namespace System.Net
 
-# Config
+# Input bindings are passed in via param block.
+param($Request, $TriggerMetadata)
+
+$apiVersionAuth = "2017-09-01"
+$apiVersionVault = "7.0"
+$resourceURI = "https://vault.azure.net"
 $keyVaultName = ""
 
-# Azure Key Vault resource to obtain access token
-$vaultTokenUri = 'https://vault.azure.net'
-$apiVersion = '2017-09-01'
+$endp = $env:MSI_ENDPOINT -replace ".$"
+$tokenAuthURI = $env:MSI_ENDPOINT+"?resource=$resourceURI&api-version=$apiVersionAuth"
+$tokenResponse = Invoke-RestMethod -Method Get -Headers @{"Secret"="$env:MSI_SECRET"} -Uri $tokenAuthURI
+$accessToken = $tokenResponse.access_token
+$authHeader = @{ Authorization = "Bearer $accessToken" }
 
-# Get Azure Key Vault Access Token using the Function's Managed Service IdentityB
-$authToken = Invoke-RestMethod -Method Get -Headers @{ 'Secret' = $env:MSI_SECRET } -Uri "$($env:MSI_ENDPOINT)?resource=$vaultTokenUri&api-version=$apiVersion"
+try {
+    <#
+    $uri = "https://$keyVaultName.vault.azure.net/secrets?api-version=7.0"
+    $resp = Invoke-RestMethod -Method Get -Uri $uri -Headers $authHeader
+    #>
 
-# Use Azure Key Vault Access Token to create Authentication Header
-$authHeader = @{ Authorization = "Bearer $($authToken.access_token)" }
+    #<#
+    $body = $Request.body | Select-Object -Property * -ExcludeProperty keyName
+    $body = $body | ConvertTo-Json
+    $vaultSecretUri = "https://$keyVaultName.vault.azure.net/secrets/$($Request.Body.keyName)?api-version=$apiVersionVault"
+    $resp = Invoke-RestMethod -Method Put -Body $body -Uri $vaultSecretUri -ContentType 'application/json' -Headers $authHeader
+    #>
+    $status = [HttpStatusCode]::OK
+}
+catch {
+    $status = [HttpStatusCode]::BadRequest
+}
 
-# Generate a new body to set a secret in the Azure Key Vault
-$body = $requestBody | Select-Object -Property * -ExcludeProperty keyName
 
-# Convert the body to JSON
-$body = $body | ConvertTo-Json
-
-# Azure Key Vault Uri to set a secret
-$vaultSecretUri = "https://$keyVaultName.vault.azure.net/secrets/$($requestBody.keyName)/?api-version=2016-10-01"
-
-# Set the secret in Azure Key Vault
-$null = Invoke-RestMethod -Method PUT -Body $body -Uri $vaultSecretUri -ContentType 'application/json' -Headers $authHeader
+# Associate values to output bindings by calling 'Push-OutputBinding'.
+Push-OutputBinding -Name Response -Value ([HttpResponseContext]@{
+    StatusCode = $status
+    Body =  $resp
+})

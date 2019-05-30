@@ -1,4 +1,4 @@
-## CLAPS v0.2 (Cloud Local Administrator Password Solution)
+## CLAPS v0.3 (Cloud Local Administrator Password Solution)
 
 ### agent.ps1
 
@@ -12,9 +12,17 @@
 ### function.ps1
 
 - Recibe las credenciales cifradas.
-- Usa la versión 1 de PowerShell en Azure Functions (SLAPS).
+- Usa la versión 2 de PowerShell en Azure Functions.
 - Se autentica contra Azure Key Vault para obtener el token de acceso y poder trabajar con el servicio.
 - Guarda en un vault de Azure Key Vault las credenciales cifradas como un secreto.
 
 
-https://srdn.io/2018/09/serverless-laps-powered-by-microsoft-intune-azure-functions-and-azure-key-vault/
+### Webgrafía
+
+- https://docs.microsoft.com/es-es/azure/app-service/overview-managed-identity#code-examples
+- https://docs.microsoft.com/es-es/azure/active-directory/managed-identities-azure-resources/services-support-managed-identities#azure-key-vault
+- https://docs.microsoft.com/es-es/azure/active-directory/managed-identities-azure-resources/howto-assign-access-portal
+- https://docs.microsoft.com/es-es/rest/api/keyvault
+- https://docs.microsoft.com/en-us/rest/api/keyvault/updatesecret/updatesecret
+- https://docs.microsoft.com/en-us/rest/api/keyvault/setsecret/setsecret
+- https://docs.microsoft.com/en-us/rest/api/keyvault/getsecret/getsecret
