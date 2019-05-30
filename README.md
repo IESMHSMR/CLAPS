@@ -1,4 +1,4 @@
-## CLAPS v0.3 (Cloud Local Administrator Password Solution)
+## CLAPS v0.4 (Cloud Local Administrator Password Solution)
 
 ### agent.ps1
 
