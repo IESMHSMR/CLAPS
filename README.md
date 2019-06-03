@@ -42,18 +42,19 @@
 
 ### Problemas identificados
 
-- 
+- No hay comprobaciones para asegurar la integridad de los datos, si se actualizan las credenciales almacenadas en la extensión de dispositivo y el cliente no cambia las credenciales, se pierde el acceso.
 
 
 ### Ampliaciones
 
-- 
+- Autenticación con el usuario para usar decrypt.ps1.
+- Establecer y gestionar la periodicidad del cambio de credenciales.
 
 
 ### Versiones
 
 - [stable](https://github.com/Velaa98/CLAPS)
-- [upcoming](https://github.com/Velaa98/CLAPS/tree/v0.4)
+- [upcoming](https://github.com/Velaa98/CLAPS/tree/v0.5)
 - [testing](https://github.com/Velaa98/CLAPS/tree/testing)
 - [v0.3](https://github.com/Velaa98/CLAPS/tree/v0.3)
 - [v0.2](https://github.com/Velaa98/CLAPS/tree/v0.2)
@@ -61,10 +62,16 @@
 
 ### Webgrafía
 
-- https://docs.microsoft.com/es-es/azure/app-service/overview-managed-identity#code-examples
-- https://docs.microsoft.com/es-es/azure/active-directory/managed-identities-azure-resources/services-support-managed-identities#azure-key-vault
-- https://docs.microsoft.com/es-es/azure/active-directory/managed-identities-azure-resources/howto-assign-access-portal
-- https://docs.microsoft.com/es-es/rest/api/keyvault
-- https://docs.microsoft.com/en-us/rest/api/keyvault/updatesecret/updatesecret
-- https://docs.microsoft.com/en-us/rest/api/keyvault/setsecret/setsecret
-- https://docs.microsoft.com/en-us/rest/api/keyvault/getsecret/getsecret
+- [Identidades Administradas](https://docs.microsoft.com/es-es/azure/active-directory/managed-identities-azure-resources/)
+- [Servicios de Azure que admiten Identidades Administradas](https://docs.microsoft.com/es-es/azure/active-directory/managed-identities-azure-resources/services-support-managed-identities#azure-key-vault)
+- [Permitiendo el acceso de una identidad administrada a un recurso de Azure](https://docs.microsoft.com/es-es/azure/active-directory/managed-identities-azure-resources/howto-assign-access-portal)
+- [Access Token para usar una identidad administrada](https://docs.microsoft.com/es-es/azure/app-service/overview-managed-identity#code-examples)
+- [Documentación de Microsoft Graph](https://docs.microsoft.com/en-us/graph)
+- [API Microsoft Graph](https://docs.microsoft.com/en-us/graph/use-the-api)
+    - [Access Token sin usuario](https://docs.microsoft.com/en-us/graph/auth-v2-service)
+    - [Trabajando con las extensiones personalizadas de un dispositivo](https://stackoverflow.com/a/56218052/11497286)
+    - [Datos personalizados en Graph usando extensiones](https://docs.microsoft.com/en-us/graph/extensibility-overview)
+- [API Azure Key Vault](https://docs.microsoft.com/es-es/rest/api/keyvault)
+    - [Actualizar secretos](https://docs.microsoft.com/en-us/rest/api/keyvault/updatesecret/updatesecret)
+    - [Crear nuevos secretos](https://docs.microsoft.com/en-us/rest/api/keyvault/setsecret/setsecret)
+    - [Obtener un secreto](https://docs.microsoft.com/en-us/rest/api/keyvault/getsecret/getsecret)
