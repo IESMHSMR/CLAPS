@@ -29,6 +29,17 @@
 - Espera la respuesta de la función con las credenciales en claro para el sid500 del equipo indicado.
 
 
+### FunctionDecrypt.ps1
+
+- Recibe el DeviceID correspondiente al equipo para el cual se desea obtener las credenciales del sid500.
+- Obtiene un token de acceso para trabajar con la API de Microsoft Graph.
+- Consulta las credenciales cifradas que corresponden al DeviceID.
+- Obtiene un token para trabajar con la API de Azure Key Vault.
+- Manda las credenciales cifradas a la API de Key Vault y las recibe descifradas.
+- Decodifica las credenciales de Base64 a Unicode.
+- Devuelve al cliente que realizó la llamada las credenciales del sid500 del equipo indicado.
+
+
 ### Problemas identificados
 
 - 
