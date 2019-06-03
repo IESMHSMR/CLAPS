@@ -1,4 +1,5 @@
-## CLAPS v0.4 (Cloud Local Administrator Password Solution)
+# CLAPS v0.5 (Cloud Local Administrator Password Solution)
+
 
 ### Agent.ps1
 
@@ -56,6 +57,7 @@
 - [stable](https://github.com/Velaa98/CLAPS)
 - [upcoming](https://github.com/Velaa98/CLAPS/tree/v0.5)
 - [testing](https://github.com/Velaa98/CLAPS/tree/testing)
+- [v0.4](https://github.com/Velaa98/CLAPS/tree/v0.4)
 - [v0.3](https://github.com/Velaa98/CLAPS/tree/v0.3)
 - [v0.2](https://github.com/Velaa98/CLAPS/tree/v0.2)
 - [v0.1](https://github.com/Velaa98/CLAPS/tree/v0.1)
@@ -68,10 +70,16 @@
 - [Access Token para usar una identidad administrada](https://docs.microsoft.com/es-es/azure/app-service/overview-managed-identity#code-examples)
 - [Documentación de Microsoft Graph](https://docs.microsoft.com/en-us/graph)
 - [API Microsoft Graph](https://docs.microsoft.com/en-us/graph/use-the-api)
+    - [Probador de Graph](https://developer.microsoft.com/en-us/graph/graph-explorer)
     - [Access Token sin usuario](https://docs.microsoft.com/en-us/graph/auth-v2-service)
-    - [Trabajando con las extensiones personalizadas de un dispositivo](https://stackoverflow.com/a/56218052/11497286)
-    - [Datos personalizados en Graph usando extensiones](https://docs.microsoft.com/en-us/graph/extensibility-overview)
+    - [Datos personalizados en Graph usando extensiones abiertas](https://docs.microsoft.com/en-us/graph/extensibility-overview)
+    - [Permisos para crear extensiones abiertas](https://docs.microsoft.com/en-us/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0#permissions)
+    - [Trabajando con las extensiones abiertas de un dispositivo](https://stackoverflow.com/a/56218052/11497286)
+    - []()
 - [API Azure Key Vault](https://docs.microsoft.com/es-es/rest/api/keyvault)
     - [Actualizar secretos](https://docs.microsoft.com/en-us/rest/api/keyvault/updatesecret/updatesecret)
     - [Crear nuevos secretos](https://docs.microsoft.com/en-us/rest/api/keyvault/setsecret/setsecret)
     - [Obtener un secreto](https://docs.microsoft.com/en-us/rest/api/keyvault/getsecret/getsecret)
+    - []()
+- []()
+- [SLAPS](https://srdn.io/2018/09/serverless-laps-powered-by-microsoft-intune-azure-functions-and-azure-key-vault)
