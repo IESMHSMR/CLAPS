@@ -1,5 +1,14 @@
 # CLAPS v0.5 (Cloud Local Administrator Password Solution)
 
+## Contenido del repositorio
+
+- [Azure Functions](Azure%20Functions/README.md)
+    - [FunctionEncrypt.ps1](Azure%20Functions/FunctionEncrypt.ps1)
+    - [FunctionDecrypt.ps1](Azure%20Functions/FunctionDecrypt.ps1)
+- [Agent](Agent/README.md)
+    - [claps.ps1](Agent/claps.ps1)
+- [Admin](Admin/README.md)
+    - [Decrypt.ps1](Admin/Decrypt.ps1)
 
 ### Agent.ps1
 
@@ -55,12 +64,14 @@
 ### Versiones
 
 - [stable](https://github.com/Velaa98/CLAPS)
-- [upcoming](https://github.com/Velaa98/CLAPS/tree/v0.5)
+- [upcoming](https://github.com/Velaa98/CLAPS/tree/v0.6)
 - [testing](https://github.com/Velaa98/CLAPS/tree/testing)
+- [v0.5](https://github.com/Velaa98/CLAPS/tree/v0.5)
 - [v0.4](https://github.com/Velaa98/CLAPS/tree/v0.4)
 - [v0.3](https://github.com/Velaa98/CLAPS/tree/v0.3)
 - [v0.2](https://github.com/Velaa98/CLAPS/tree/v0.2)
 - [v0.1](https://github.com/Velaa98/CLAPS/tree/v0.1)
+
 
 ### Webgrafía
 
@@ -75,13 +86,11 @@
     - [Datos personalizados en Graph usando extensiones abiertas](https://docs.microsoft.com/en-us/graph/extensibility-open-users)
     - [Permisos para crear extensiones abiertas](https://docs.microsoft.com/en-us/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0#permissions)
     - [Trabajando con las extensiones abiertas de un dispositivo](https://stackoverflow.com/a/56218052/11497286)
-    - []()
 - [API Azure Key Vault](https://docs.microsoft.com/es-es/rest/api/keyvault)
     - [Actualizar secretos](https://docs.microsoft.com/en-us/rest/api/keyvault/updatesecret/updatesecret)
     - [Crear nuevos secretos](https://docs.microsoft.com/en-us/rest/api/keyvault/setsecret/setsecret)
     - [Obtener un secreto](https://docs.microsoft.com/en-us/rest/api/keyvault/getsecret/getsecret)
     - [Cifrar con una clave](https://docs.microsoft.com/en-us/rest/api/keyvault/encrypt/encrypt)
     - [Descifrar con una clave](https://docs.microsoft.com/en-us/rest/api/keyvault/decrypt/decrypt)
-- []()
 - [Script ps1 como servicio de Windows](https://www.reddit.com/r/PowerShell/comments/59f94d/run_powershell_script_ps1_as_a_windows_service/)
 - [SLAPS](https://srdn.io/2018/09/serverless-laps-powered-by-microsoft-intune-azure-functions-and-azure-key-vault)
