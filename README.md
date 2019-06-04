@@ -83,4 +83,5 @@
     - [Cifrar con una clave](https://docs.microsoft.com/en-us/rest/api/keyvault/encrypt/encrypt)
     - [Descifrar con una clave](https://docs.microsoft.com/en-us/rest/api/keyvault/decrypt/decrypt)
 - []()
+- [Script ps1 como servicio de Windows](https://www.reddit.com/r/PowerShell/comments/59f94d/run_powershell_script_ps1_as_a_windows_service/)
 - [SLAPS](https://srdn.io/2018/09/serverless-laps-powered-by-microsoft-intune-azure-functions-and-azure-key-vault)
