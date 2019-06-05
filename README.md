@@ -185,3 +185,5 @@ Función de Azure que se encarga de descifrar las credenciales del administrador
 - [SLAPS](https://srdn.io/2018/09/serverless-laps-powered-by-microsoft-intune-azure-functions-and-azure-key-vault)
     - [John Seerden](https://www.srdn.io/about/)
         - [GitHub](https://github.com/jseerden)
+- [Diagrama](https://www.lucidchart.com)
+- [Presentación](https://slides.com)
