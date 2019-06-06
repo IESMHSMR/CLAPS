@@ -2,12 +2,13 @@
 
 ## Índice
 
+- [Documentación técnica](#documentación-técnica)
 - [Introducción](#introducción)
     - [Objetivos](#objetivos)
-    - [¿Qué es CLAPS?](#¿qué-es-claps?)
-    - [¿Cómo funciona?](#¿cómo-funciona?)
-    - [¿Es para todos?](#¿es-para-todos?)
-    - [¿Para quién es?](#¿para-quién-es?) (o a quién va destinado)
+    - [¿Qué es CLAPS?](#qué-es-claps)
+    - [¿Cómo funciona?](#cómo-funciona)
+    - [¿Es para todos?](#es-para-todos)
+    - [¿Para quién es?](#para-quién-es) (o a quién va destinado)
 - [Conceptos](#conceptos)
     - [LAPS, SLAPS y CLAPS](#laps,-slaps-y-claps)
     - [Azure Functions](#azure-functions)
@@ -31,6 +32,7 @@
 - [Versiones](#versiones)
 - [Webgrafía](#webgrafía)
 
+### Documentación Técnica
 
 
 ### Introducción
