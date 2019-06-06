@@ -142,6 +142,7 @@ Función de Azure que se encarga de descifrar las credenciales del administrador
 
 ### Problemas identificados
 - No hay comprobaciones para asegurar la integridad de los datos, si se actualizan las credenciales almacenadas en la extensión de dispositivo y el cliente no cambia las credenciales, se pierde el acceso.
+- No se controlan los timeout dentro de la función, si por algún motivo la función se queda esperando el timeout por defecto, aumenta el costo innecesariamente.
 
 
 
