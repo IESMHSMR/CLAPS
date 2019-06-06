@@ -23,17 +23,13 @@
     - [Admin](Admin/README.md)
         - [Decrypt.ps1](#decrypt.ps1)
 - [Esquema](#esquema)
-- [Ampliaciones](#ampliaciones)
-    - [Integridad de datos](#integridad-de-datos)
-    - [Seguridad](#seguridad)
-    - [Funcionalidades](#funcionalidades)
 - [Problemas identificados](#problemas-identificados)
 - [Conclusiones](#conclusiones)
 - [Versiones](#versiones)
 - [Webgrafía](#webgrafía)
 
 ### Documentación Técnica
-
+Esta documentación es meramente introductoria para conocer el proyecto, si quieres saber más te aconsejo ir a la [documentación técnica](https://github.com/Velaa98/CLAPS/wiki).
 
 ### Introducción
 En un entorno Windows cuando hablamos de un dominio implicamos la necesidad de un administrador para el mismo, damos por hecho que al ser una cuenta con altos privilegios dentro de la organización debe estar protegida correctamente. Al ser una única cuenta o un número límitado de ellas, no habría gran inconveniente en gestionar credenciales seguras y únicas para cada una de ellas.
@@ -79,28 +75,6 @@ Todas tienen en común su objetivo principal, sin embargo ninguna de ellas funci
 
 
 
-#### LAPS
-LAPS (Local Administrator Password Solution) es una solución de Microsoft para solventar los objetivos que se comentan...
-
-#### SLAPS
-SLAPS (Serverless Administrator Password Solution) es una solución creada por John Seerden como primera alternativa a LAPS si nos encontramos en un entorno en la nube. 
-
-#### LAPS vs SLAPS/CLAPS
-LAPS está pensado para trabajar con Active Directory a diferencia de SLAPS o CLAPS, que están pensados para trabajar en la nube con Azure Active Directory.
-
-#### Active Directory vs Azure Active Directory
-
-
-
-##################
-# CLAPS vs SLAPS #
-##################
-Dos soluciones para el mismo problema
-
-
-
-
-
 ### Requisitos
 - 
 
@@ -120,29 +94,27 @@ Aplicación que permite a un usuario autorizado solicitar las credenciales del a
 Función de Azure que se encarga de descifrar las credenciales del administrador local para el equipo solicitado.
 
 
-
 ### Esquema
 
 
 
-
-### Ampliaciones
-#### Integridad de datos
+### Integridad de datos
 - 
 
-#### Seguridad
+### Seguridad
 - Autenticación con el usuario para usar decrypt.ps1.
 
-#### Funcionalidades
+### Funcionalidades
 - Establecer y gestionar la periodicidad del cambio de credenciales.
 - Definir el método de distribución e instalación del agente.
 - Logs en local y en la nube.
 - Auditoria para ver quien ha usado Decrypt.ps1 y para que equipo.
 
-
 ### Problemas identificados
 - No hay comprobaciones para asegurar la integridad de los datos, si se actualizan las credenciales almacenadas en la extensión de dispositivo y el cliente no cambia las credenciales, se pierde el acceso.
 - No se controlan los timeout dentro de la función, si por algún motivo la función se queda esperando el timeout por defecto, aumenta el costo innecesariamente.
+
+
 
 
 
