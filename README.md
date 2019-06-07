@@ -26,7 +26,7 @@
 - [Problemas identificados](#problemas-identificados)
 - [Conclusiones](#conclusiones)
 - [Versiones](#versiones)
-- [Webgrafía](#webgrafía)
+- [Recursos](#recursos)
 
 ### Documentación Técnica
 Esta documentación es meramente introductoria para conocer el proyecto, si quieres saber más te aconsejo ir a la [documentación técnica](https://github.com/Velaa98/CLAPS/wiki).
@@ -131,12 +131,8 @@ Función de Azure que se encarga de descifrar las credenciales del administrador
 
 
 
-### Webgrafía
+### Recursos
 
-- [Identidades Administradas](https://docs.microsoft.com/es-es/azure/active-directory/managed-identities-azure-resources/)
-- [Servicios de Azure que admiten Identidades Administradas](https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/services-support-managed-identities#azure-key-vault)
-- [Permitiendo el acceso de una identidad administrada a un recurso de Azure](https://docs.microsoft.com/es-es/azure/active-directory/managed-identities-azure-resources/howto-assign-access-portal)
-- [Access Token para usar una identidad administrada](https://docs.microsoft.com/es-es/azure/app-service/overview-managed-identity#code-examples)
 - [Documentación de Microsoft Graph](https://docs.microsoft.com/en-us/graph)
 - [API Microsoft Graph](https://docs.microsoft.com/en-us/graph/use-the-api)
     - [Probador de Graph](https://developer.microsoft.com/en-us/graph/graph-explorer)
@@ -144,21 +140,12 @@ Función de Azure que se encarga de descifrar las credenciales del administrador
     - [Datos personalizados en Graph usando extensiones abiertas](https://docs.microsoft.com/en-us/graph/extensibility-open-users)
     - [Permisos para crear extensiones abiertas](https://docs.microsoft.com/en-us/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0#permissions)
     - [Trabajando con las extensiones abiertas de un dispositivo](https://stackoverflow.com/a/56218052/11497286)
-- [API Azure Active Directory Graph](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-graph-api)
 - [Documentación de Azure Functions](https://docs.microsoft.com/es-es/azure/azure-functions/)
 - [Documentación de Azure Key Vault](https://docs.microsoft.com/en-us/azure/key-vault/key-vault-whatis)
-- [Cuenta gratuita de Azure](https://azure.microsoft.com/es-es/free/)
-- [Precios de Azure Key Vault](https://azure.microsoft.com/es-es/pricing/details/key-vault/)
 - [API Azure Key Vault](https://docs.microsoft.com/es-es/rest/api/keyvault)
-    - [Actualizar secretos](https://docs.microsoft.com/en-us/rest/api/keyvault/updatesecret/updatesecret)
-    - [Crear nuevos secretos](https://docs.microsoft.com/en-us/rest/api/keyvault/setsecret/setsecret)
-    - [Obtener un secreto](https://docs.microsoft.com/en-us/rest/api/keyvault/getsecret/getsecret)
     - [Cifrar con una clave](https://docs.microsoft.com/en-us/rest/api/keyvault/encrypt/encrypt)
     - [Descifrar con una clave](https://docs.microsoft.com/en-us/rest/api/keyvault/decrypt/decrypt)
 - [Script ps1 como servicio de Windows](https://www.reddit.com/r/PowerShell/comments/59f94d/run_powershell_script_ps1_as_a_windows_service/)
 - [LAPS](https://docs.microsoft.com/en-us/previous-versions/mt227395(v=msdn.10))
 - [SLAPS](https://srdn.io/2018/09/serverless-laps-powered-by-microsoft-intune-azure-functions-and-azure-key-vault)
     - [John Seerden](https://www.srdn.io/about/)
-        - [GitHub](https://github.com/jseerden)
-- [Diagrama](https://www.lucidchart.com)
-- [Presentación](https://slides.com)
